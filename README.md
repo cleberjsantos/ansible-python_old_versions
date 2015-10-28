@@ -1,8 +1,13 @@
 python_old_versions
 ===================
 
+[![Ansible Role](https://img.shields.io/ansible/role/5751.svg)](https://galaxy.ansible.com/list#/roles/5751)
+
+
 Installs older and newer Python versions for Debian likes.
+
 Currently supported releases — 2.3, 2.4, 2.5, 2.6, 2.7, 3.1, 3.2, 3.3, 3.4, 3.5
+
 
 Requirements
 ------------
