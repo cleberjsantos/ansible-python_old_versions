@@ -1,0 +1,19 @@
+---
+#http://irtfweb.ifa.hawaii.edu/~lockhart/gpg/
+
+- name: "Add ppa:fkrull/deadsnakes repo"
+  apt_repository: repo='ppa:fkrull/deadsnakes' state=present update_cache=yes
+  tags: python
+
+- name: "Add fkrull key"
+  apt_key: keyserver=keyserver.ubuntu.com id=FF3997E83CD969B409FB24BC5BB92C09DB82666C
+
+- name: "Installs Python package"
+  apt: name={{ item }}
+       state=present
+       force={{ force_install }}
+       install_recommends=yes
+  with_items:
+    - "python{{ python_version }}"
+    - "python{{ python_version }}-dev"
+  notify: ez_install

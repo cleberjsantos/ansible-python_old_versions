@@ -1,0 +1,35 @@
+---
+
+- name: ez_install
+  copy: src=/files/ez_setup.py dest=/tmp/ez_setup.py
+  when: easy_install
+  notify: install ez_install
+  tags: python
+
+- name: install ez_install
+  action: command "/usr/bin/python{{ python_version }} /tmp/ez_setup.py"
+  when: easy_install
+  notify: 
+    - install pip24
+    - install pip
+  tags: python
+
+- name: install pip24
+  action: command "/usr/bin/easy_install-{{ python_version }} {{ python_pip_py24 }}"
+  when: "'$python_version' == '2.4'"
+  notify: install virtualenv24 
+  tags: python
+
+- name: install pip
+  action: command "/usr/bin/easy_install-{{ python_version }} pip"
+  when: "'$python_version' != '2.4'"
+  notify: install virtualenv 
+  tags: python
+
+- name: install virtualenv24
+  action: command "/usr/bin/pip-{{ python_version }} virtualenv<={{ python_virtualenv }}"
+  tags: python
+
+- name: install virtualenv
+  action: command "/usr/bin/pip virtualenv=={{ python_virtualenv }}"
+  tags: python
