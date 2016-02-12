@@ -1,7 +1,7 @@
 ---
 
 - name: ez_install
-  copy: src=/files/ez_setup.py dest=/tmp/ez_setup.py
+  copy: src=files/ez_setup.py dest=/tmp/ez_setup.py
   when: easy_install
   notify: install ez_install
   tags: python
