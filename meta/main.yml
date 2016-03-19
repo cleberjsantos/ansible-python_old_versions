@@ -1,4 +1,5 @@
 ---
+
 galaxy_info:
   author: Cleber J Santos
   description: Installs an older version of Python
@@ -104,18 +105,9 @@ galaxy_info:
   # Below are all categories currently available. Just as with
   # the platforms above, uncomment those that apply to your role.
   #
-  categories:
-  #- cloud
-  #- cloud:ec2
-  #- cloud:gce
-  #- cloud:rax
-  #- clustering
-  #- database
-  #- database:nosql
-  #- database:sql
-  - development
-  #- monitoring
-  #- networking
-  - packaging
-  - system
-  - web
+  galaxy_tags:
+    - development
+    - packaging
+    - system
+    - web
+dependencies: []
