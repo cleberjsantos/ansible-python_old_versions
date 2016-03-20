@@ -1,0 +1,7 @@
+---
+
+- hosts: localhost
+  remote_user: root
+  roles:
+  - { role: python_old_versions, python_version: 2.3, tags: [python] }
+
