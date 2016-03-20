@@ -7,8 +7,8 @@ dist: trusty
 
 env:
   matrix:
-    - TEST_YML=test2.3.yml
-    - TEST_YML=test.yml
+    - TEST_YML=test2.3.yml PY_VERSION=2.3
+    - TEST_YML=test.yml PY_VERSION=2.4
 
 before_install:
   # Make sure everything's up to date.
@@ -36,6 +36,12 @@ script:
 
   # Travis CI's environment requires one _extra_ run for true idempotence :-/.
   - "ansible-playbook -i tests/inventory tests/$TEST_YML --connection=local --sudo -vvv"
+
+  - > 
+    command -v python$PY_VERSION
+    | grep -q '.*python$PY_VERSION'
+    && (echo 'Python$PY_VERSION has been installed. pass' && exit 0)
+    || (echo 'Python$PY_VERSION not installed. fail' && exit 1)
 
   # Run the role/playbook again, checking to make sure it's idempotent.
   - >
