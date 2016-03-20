@@ -3,5 +3,6 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - { role: cleber.python_old_versions, tags: [python] }
+    - cleberjsantos.python_old_versions
+  tags: python
 
