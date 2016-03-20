@@ -3,6 +3,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - cleberjsantos.python_old_versions
-  tags: python
-
+    - { role: ansible-python_old_versions, tags: [python] }
