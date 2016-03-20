@@ -27,7 +27,7 @@ install:
   # Add ansible.cfg to pick up roles path.
   - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
 
-  - "{ sed -i -e 's#python_version: 2.3#python_version: $PY_VERSION#' } $TEST_YML"
+  - "{ sed -i -e 's#python_version: 2.3#python_version: $PY_VERSION#'; } $TEST_YML"
 
 script:
   # Check the role/playbook's syntax.
