@@ -3,4 +3,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - { role: ansible-python_old_versions, python_version: 2.3, tags: [python] }
+    - { role: ansible-python_old_versions, python_version: 2.3, easy_install: false, tags: [python] }
