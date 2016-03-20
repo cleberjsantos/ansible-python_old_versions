@@ -4,7 +4,6 @@ python_old_versions
 [![Build Status](https://travis-ci.org/cleberjsantos/ansible-python_old_versions.svg?branch=master)](https://travis-ci.org/cleberjsantos/ansible-python_old_versions)
 [![Ansible Galaxy](https://img.shields.io/badge/galaxy-cleberjsantos.python_old_versions-blue.svg)](https://galaxy.ansible.com/cleberjsantos/ansible-python_old_versions/)
 [![Tag](https://img.shields.io/github/tag/cleberjsantos/ansible-python_old_versions.svg)]()
-[![Travis CI](https://img.shields.io/travis/cleberjsantos/ansible-python_old_versions/master.svg)](http://travis-ci.org/cleberjsantos/ansible-python_old_versions)
 
 
 Installs older and newer Python versions for Debian likes.
