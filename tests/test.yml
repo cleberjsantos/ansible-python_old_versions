@@ -3,5 +3,5 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - { role: python_old_versions, tags: [python] }
+  - { role: python_old_versions, tags: [python] }
 
