@@ -7,8 +7,8 @@ dist: trusty
 
 env:
   matrix:
-    - TEST_YML=test.yml PY_VERSION=2.3
-    - TEST_YML=test.yml PY_VERSION=2.4
+    - TEST_YML=test2.3.yml
+    - TEST_YML=test.yml
 
 before_install:
   # Make sure everything's up to date.
@@ -26,8 +26,6 @@ install:
 
   # Add ansible.cfg to pick up roles path.
   - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
-
-  - "{ sed -i -e 's#python_version: 2.3#python_version: $PY_VERSION#'; } $TEST_YML"
 
 script:
   # Check the role/playbook's syntax.
